@@ -1,0 +1,8 @@
+//- Все примеси в этом файле должны начинаться c имени блока (link-set)
+
+mixin link-set(title, items)
+	- title = title || ''
+	.link-set
+		h2.link-set__title!= title
+		each item in items
+			a.link-set__link(href= item.href target= item.isTarget ? '_blank' : '')!= item.link

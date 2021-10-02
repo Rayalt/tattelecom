@@ -1,0 +1,57 @@
+header.header
+	.grid
+		.grid__row
+			.grid__col
+				.header__inner
+					.header__logo-set
+						svg.header__logo
+							use(xlink:href='img/svgSprite.svg#logo')
+						svg.header__tariff
+							use(xlink:href='img/svgSprite.svg#tariff')
+					.header__menu-set
+						.header__row
+							.header__secondary-nav
+								+secondary-nav([
+									{link: 'Частным клиентам', href: '#'},
+									{link: 'Бизнесу', href: '#'},
+									{isSelect: true, title: 'Еще', link:
+										[
+											{link: 'Интернет1', href: '#'},
+											{link: 'Телевидение1', href: '#'},
+											{link: 'Домофон1', href: '#'}
+										]
+									}
+								])
+							.header__menu-tertiary
+								+tertiary-nav([
+									{link: 'Поддержка', href: '#'},
+									{link: 'Офисы продаж', href: '#'},
+									{link: 'Оплата', href: '#'},
+									{isIconed: true, isSelect: true, href: '#', title: 'Казань', icon: 'navigation', link:
+										[
+											{link: 'Москва', href: '#'},
+											{link: 'Санкт-Петербург', href: '#'},
+											{link: 'Екатеринбург', href: '#'}
+										]
+									},
+									{isIconed: true, link: 'Личный кабинет', icon: 'person', href: '#'},
+								])
+						.header__row
+							.header__main-nav
+								+main-nav([
+									{link: 'Мобильная связь', href: '#'},
+									{link: 'Интернет', href: '#'},
+									{link: 'Телевидение', href: '#'},
+									{link: 'Домофон', href: '#'},
+									{link: 'Каталог устройств', href: '#'}
+								])
+							.header__actions
+								.header__button
+									a.button.button_primary(href="#") Стать абонентом
+								.header__search
+									.search
+										.search__inner
+											svg.search__icon
+												use(xlink:href='/img/svgSprite.svg#icon__search')
+											input.search__input(type='search' placeholder='Поиск')
+											.search__cleaner

@@ -1,0 +1,12 @@
+// В этом файле должны быть стили для БЭМ-блока tariff, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+.tariff {
+	&__inner {}
+	&__slider {
+		margin: 0 -15px;
+		position: relative;
+		
+	}
+}

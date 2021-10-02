@@ -1,0 +1,76 @@
+footer.footer
+	.footer__inner
+		.grid
+			.grid__row
+				.grid__col.grid__col_xl-3
+					.footer__link-set
+						+link-set('Таттелеком',
+							[
+								{href: '#', link: 'О компании'},
+								{href: '#', link: 'Пресс-центр'},
+								{href: '#', link: 'Работа в компании'},
+								{href: '#', link: 'Акционерам и инвесторам'},
+								{href: '#', link: 'Структурные подразделения'},
+								{href: '#', link: 'Контактная информация'}
+							
+							]
+						)
+				.grid__col.grid__col_xl-3
+					.footer__link-set
+						+link-set('Частным клиентам',
+							[
+								{href: '#', link: 'Мобильная связь'},
+								{href: '#', link: 'Интернет'},
+								{href: '#', link: 'Телевидение'},
+								{href: '#', link: 'Каталог устройств'},
+								{href: '#', link: 'Домофония'},
+								{href: '#', link: 'Видеонаблюдение'}
+	
+							]
+						)
+				.grid__col.grid__col_xl-3
+					.footer__link-set
+						+link-set('Бизнесу',
+							[
+								{href: '#', link: 'Решения для бизнеса'},
+								{href: '#', link: 'Мобильная связь'},
+								{href: '#', link: 'Интернет в офис'},
+								{href: '#', link: 'Телефония'},
+								{href: '#', link: 'Цифровые сервисы'},
+								{href: '#', link: 'Продвижение'}
+							]
+						)
+				.grid__col.grid__col_xl-3
+					.footer__col
+						.footer__link-set
+							+link-set('Партнерам',
+								[
+									{href: '#', link: 'Поставщикам'},
+									{href: '#', link: 'Операторам связи'},
+									{href: '#', link: 'Дилерам'}
+								]
+							)
+						.footer__button
+							a.button.button_ghost(href="#") Перейти в Летай
+	
+			.grid__row
+				.grid__col
+					.footer__row
+						.footer__info
+							.footer__link-row
+								a.footer__link(href="#") Раскрытие информации
+								a.footer__link(href="#") Лицензии и сертификаты
+								a.footer__link(href="#") Закупки
+								a.footer__link(href="#") Приложения
+							p.footer__consent Продолжая использовать наш сайт, вы даете согласие на обработку файлов Cookies и других пользовательских данных, в соответствии с #[a(href='#') Политикой конфиденциальности].
+							p.footer__copy © 2021 ПАО «Таттелеком»
+						.footer__contact-set
+							p.footer__contact Контакт-центр:
+							a.footer__phone(href='tel:88432222222') (843) 222-22-22
+							.footer__social-set
+								a.footer__social(href='https://www.vk.com/' target='_blank')
+									svg.footer__social-icon
+										use(xlink:href='img/svgSprite.svg#icon__social_vk')
+								a.footer__social(href='https://www.instagram.com/' target='_blank')
+									svg.footer__social-icon
+										use(xlink:href='img/svgSprite.svg#icon__social_ig')

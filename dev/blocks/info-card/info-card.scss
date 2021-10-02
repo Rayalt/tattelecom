@@ -1,0 +1,77 @@
+// В этом файле должны быть стили для БЭМ-блока info-card, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+.info-card {
+	color: inherit;
+	display: flex;
+	flex-direction: column;
+	text-decoration: none;
+	&__heading {
+		font-size: 20px;
+		font-weight: 400;
+		letter-spacing: 0.015em;
+		line-height: 1.65;
+		margin: 0;
+	}
+	&__cover {
+		border-radius: 5px;
+		height: 329px;
+		overflow: hidden;
+		position: relative;
+		z-index: 2;
+	}
+	&__content {
+		background-color: var(--color-white);
+		border-radius: 5px;
+		box-shadow: var(--info-card-shadow);
+		overflow: hidden;
+		padding: 25px 93px 21px 22px;
+		position: relative;
+	}
+	&__img {
+		height: 100%;
+		object-fit: cover;
+		position: absolute;
+		width: 100%;
+	}
+	&__text {
+		position: relative;
+		z-index: 2;
+	}
+	&:hover {
+		.info-card__more {
+			height: 120px;
+			opacity: 1;
+			width: 120px;
+		}
+		.info-card__icon {
+			height: 42px;
+			opacity: 1;
+			width: 42px;
+		}
+	}
+	&__more {
+		align-items: center;
+		background-color: var(--color-accent-light);
+		border-radius: 50%;
+		bottom: -25px;
+		box-shadow: var(--info-card-shadow);
+		display: flex;
+		height: 0;
+		justify-content: center;
+		opacity: 0;
+		overflow: hidden;
+		position: absolute;
+		right: -27px;
+		transition: opacity .5s ease, width .25s ease, height .25s ease;
+		width: 0;
+	}
+	&__icon {
+		fill: var(--color-accent);
+		height: 0;
+		opacity: 0;
+		transition: opacity .5s ease, width .25s ease, height .25s ease;
+		width: 0;
+	}
+}

@@ -1,0 +1,15 @@
+// В этом файле должны быть стили для БЭМ-блока quick-action, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+.quick-action {
+	&__row {
+		display: flex;
+		&:nth-of-type(even) {
+			flex-direction: row-reverse;
+		}
+	}
+	&__row + &__row {
+		margin-top: 30px;
+	} 
+}

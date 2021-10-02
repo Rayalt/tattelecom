@@ -1,0 +1,29 @@
+// В этом файле должны быть стили для БЭМ-блока main-nav, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+.main-nav {
+	color: var(--color-primary);
+	font-size: 15px;
+	font-weight: 400;
+	letter-spacing: 0.02em;
+	line-height: 1.6;
+	&__list {
+		align-items: center;
+		display: flex;
+		list-style: none;
+		margin: 0;
+		padding: 0;
+	}
+	&__item + &__item {
+		margin-left: 35px;
+	}
+	&__link {
+		color: inherit;
+		text-decoration: none;
+		transition: color .25s ease;
+		&:hover {
+			color: var(--color-brand);
+		}
+	}
+}

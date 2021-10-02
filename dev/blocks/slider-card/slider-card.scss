@@ -1,0 +1,62 @@
+// В этом файле должны быть стили для БЭМ-блока slider-card, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+.slider-card {
+	margin-top: 31px;
+	padding: 20px 15px 54px 15px;
+	position: static;
+	&__wrapper {
+		display: grid;
+		grid-auto-flow: column;
+	}
+	&__slide {}
+	&__pagination {
+		transform: translateY(12px);
+	}
+	&__button-prev, &__button-next {
+		background: var(--color-white);
+		border-radius: 3px;
+		box-shadow: var(--box-shadow-centered);
+		height: 50px;
+		padding: 12px;
+		width: 50px;
+		&:hover {
+			.slider-card__button-icon {
+				fill: var(--color-accent);
+			}
+		}
+	}
+	&__button-prev {
+		left: 50%;
+		transform: translateX(-710px);
+		top: 47%;
+	}
+	&__button-next {
+		left: 50%;
+		transform: translateX(660px);
+		top: 47%;
+	}
+	&__button-prev::after, &__button-next::after {
+		content: '';
+	}
+	&__button-icon {
+		fill: var(--color-primary);
+		flex-shrink: 0;
+		height: 24px;
+		transition: fill .25s ease;
+		width: 24px;
+		.slider-card__button-prev & {
+			transform: rotate(180deg);
+		}
+	}
+}
+
+.swiper-pagination-bullet {
+	background-color: var(--color-secondary);
+	height: 12px;
+	width: 12px;
+}
+.swiper-pagination-bullet-active {
+	background-color: var(--color-accent);
+}

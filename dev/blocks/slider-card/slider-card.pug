@@ -1,0 +1,37 @@
+//- Все примеси в этом файле должны начинаться c имени блока (slider-card)
+
+mixin slider-card(items)
+	.slider-card.swiper
+		.swiper-wrapper.slider-card__wrapper
+			each item in items
+				.swiper-slide.slider-card__slide
+					.tariff-card(class= item.accent === true ? 'tariff-card_invert':'')
+						.tariff-card__row
+							h2.tariff-card__title!= item.title
+							p.tariff-card__label!= item.label
+							.tariff-card__option-set
+								each option in item.options
+									.tariff-card__option
+										svg.tariff-card__option-icon
+											use(xlink:href='img/svgSprite.svg#icon__' + option.icon)
+										p.tariff-card__option-descr!= option.descr
+						.tariff-card__row
+							p.tariff-card__subtitle!= item.subtitle
+							p.tariff-card__text!= item.text
+							p.tariff-card__text!= item.cashback
+						.tariff-card__row
+							p.tariff-card__price!=item.price
+								span ₽/мес
+							a.button.tariff-card__button(class='button_' + item.buttonMod)!= item.buttonTitle
+							a.tariff-card__link(href='#')!= item.linkTitle
+						if item.accent === true
+							svg.tariff-card__icon
+								use(xlink:href='img/svgSprite.svg#icon__hit')
+							img.tariff-card__bg(src='img/bg__lines_tariff-card_@1.png' srcset='img/bg__lines_tariff-card_@2.png 2x' alt='card bg')
+		.swiper-pagination.slider-card__pagination
+		.swiper-button-prev.slider-card__button-prev
+			svg.slider-card__button-icon
+				use(xlink:href='img/svgSprite.svg#icon__shewron_large')
+		.swiper-button-next.slider-card__button-next
+			svg.slider-card__button-icon
+				use(xlink:href='img/svgSprite.svg#icon__shewron_large')

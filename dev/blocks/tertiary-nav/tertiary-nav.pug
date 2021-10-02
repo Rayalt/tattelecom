@@ -1,0 +1,24 @@
+//- Все примеси в этом файле должны начинаться c имени блока (tertiary-nav)
+
+mixin tertiary-nav(items)
+	nav.tertiary-nav
+		ul.tertiary-nav__list
+			each item in items
+				li.tertiary-nav__item
+					if item.isIconed === true
+						if item.isSelect === true
+							.tertiary-nav__drop-trigger(data-drop='true')
+								a.tertiary-nav__drop-link(href= item.href target= item.isTarget ? '_blank' : '')!= item.title
+								svg.tertiary-nav__drop-icon
+									use(xlink:href='img/svgSprite.svg#icon__' + item.icon)
+							ul.drop-tertiary
+								each link in item.link
+									li.drop-tertiary__item(data-drop-item='true')
+										a.drop-tertiary__link(href= link.href target= link.isTarget ? '_blank' : '')!= link.link
+						else
+							.tertiary-nav__item-inner
+								a.tertiary-nav__link(href= item.href target= item.isTarget ? '_blank' : '')!= item.link
+								svg.tertiary-nav__icon
+									use(xlink:href='img/svgSprite.svg#icon__' + item.icon)
+					else
+						a.tertiary-nav__link(href= item.href target= item.isTarget ? '_blank' : '')!= item.link

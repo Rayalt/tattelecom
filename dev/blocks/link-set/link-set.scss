@@ -1,0 +1,32 @@
+// В этом файле должны быть стили для БЭМ-блока link-set, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+.link-set {
+	display: flex;
+	flex-direction: column;
+	&__title {
+		color: var(--color-white);
+		font-size: 20px;
+		font-weight: 400;
+		letter-spacing: 0.015em;
+		line-height: 1.6;
+		margin: 0;
+	}
+	&__link {
+		color: var(--color-white);
+		font-size: 16px;
+		font-weight: 300;
+		letter-spacing: 0.02em;
+		line-height: 1.5;
+		margin-right: auto;
+		margin-top: 16px;
+		text-decoration: none;
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+	&__link + &__link {
+		margin-top: 16px;
+	}
+}

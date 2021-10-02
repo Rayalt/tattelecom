@@ -1,0 +1,42 @@
+// В этом файле должны быть стили для БЭМ-блока secondary-nav, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+.secondary-nav {
+	color: var(--color-teritary);
+	font-size: 14px;
+	font-weight: 700;
+	line-height: 1.2;
+	&__list {
+		display: flex;
+		list-style: none;
+		margin: 0;
+		padding: 0;
+	}
+	&__item + &__item {
+		margin-left: 20px;
+	}
+	&__link {
+		color: inherit;
+		text-decoration: none;
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+	&__drop-trigger {
+		align-items: center;
+		display: flex;
+		position: relative;
+		&:hover {
+			cursor: pointer;
+		}
+	}
+	&__drop-title {
+		margin: 0;
+	}
+	&__drop-icon {
+		fill: var(--color-teritary);
+		height: 16px;
+		width: 16px;
+	}
+}

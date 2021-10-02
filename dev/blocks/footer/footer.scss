@@ -1,0 +1,123 @@
+// В этом файле должны быть стили для БЭМ-блока footer, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+.footer {
+	background-color: var(--color-primary);
+	&__inner {
+		padding: 64px 0 40px;
+	}
+	&__row {
+		box-shadow: var(--inner-shadow-top-thin);
+		display: flex;
+		justify-content: space-between;
+		margin-top: 40px;
+		padding-top: 40px;
+	}
+	&__col {
+		display: flex;
+		flex-direction: column;
+		height: 100%;
+		justify-content: space-between;
+	}
+	&__button {
+		height: 56px;
+	}
+	&__link-row {
+		display: flex;
+	}
+	&__info {
+		display: flex;
+		flex-direction: column;
+		width: 66.67%;
+	}
+	&__link {
+		color: var(--color-white);
+		font-size: 16px;
+		font-weight: 400;
+		letter-spacing: 0.01em;
+		line-height: 1;
+		text-decoration: none;
+		transition: color .25s ease;
+		&:hover {
+			color: var(--color-accent);
+		}
+	}
+	&__link + &__link {
+		margin-left: 72px;
+	}
+	&__consent {
+		color: var(--color-secondary);
+		font-size: 16px;
+		font-weight: 300;
+		line-height: 1.25;
+		margin: 32px 0 0 0;
+		max-width: 740px;
+		a {
+			color: var(--color-brand);
+			text-decoration: underline;
+			&:hover {
+				text-decoration: none;
+			}
+		}
+	}
+	&__copy {
+		color: var(--color-white);
+		font-size: 14px;
+		font-weight: 300;
+		line-height: 1.15;
+		margin: 40px 0 0 0;
+	}
+	&__contact-set {
+		align-items: flex-end;
+		display: flex;
+		flex-direction: column;
+		text-align: right;
+		width: 33.33%;
+	}
+	&__contact {
+		color: var(--color-secondary);
+		font-size: 16px;
+		font-weight: 400;
+		letter-spacing: 0.01em;
+		line-height: 1;
+		margin: 0;
+		white-space: nowrap;
+	}
+	&__phone {
+		color: var(--color-white);
+		font-size: 38px;
+		font-weight: 400;
+		letter-spacing: 0.015em;
+		line-height: 1.25;
+		margin-top: 8px;
+		text-align: right;
+		text-decoration: none;
+		transition: color .25s ease;
+		white-space: nowrap;
+		&:hover {
+			color: var(--color-accent);
+		}
+	}
+	&__social-set {
+		align-items: center;
+		display: flex;
+		margin-top: 32px;
+	}
+	&__social {
+		&:hover {
+			.footer__social-icon {
+				fill: var(--color-accent);
+			}
+		}
+	}
+	&__social + &__social {
+		margin-left: 32px;
+	}
+	&__social-icon {
+		fill: var(--color-secondary);
+		height: 40px;
+		transition: fill .25s ease;
+		width: 40px;
+	}
+}

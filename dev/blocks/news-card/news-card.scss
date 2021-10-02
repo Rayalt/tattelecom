@@ -1,0 +1,86 @@
+// В этом файле должны быть стили для БЭМ-блока news-card, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+.news-card {
+	border-radius: 5px;
+	box-shadow: var(--box-shadow-bottom);
+	color: inherit;
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+	overflow: hidden;
+	padding: 11px 53px 16px 24px;
+	position: relative;
+	text-decoration: none;
+	&:hover {
+		.news-card__img {
+			opacity: 0;
+		}
+		.news-card__more {
+			height: 111px;
+			opacity: 1;
+			width: 111px;
+		}
+		.news-card__icon {
+			height: 42px;
+			opacity: 1;
+			width: 42px;
+		}
+	}
+	&__content {
+		position: relative;
+		z-index: 2;
+	}
+	&__label {
+		color: var(--color-accent);
+		font-size: 14px;
+		font-weight: 300;
+		letter-spacing: 0.02em;
+		line-height: 1.6;
+		margin: 0;
+	}
+	&__heading {
+		font-size: 20px;
+		font-weight: 400;
+		letter-spacing: 0.015em;
+		line-height: 1.65;
+		margin: 15px 0 0 0;
+	}
+	&__img {
+		height: 482px;
+		position: absolute;
+		transition: opacity .25s ease;
+		width: auto;
+		.swiper-slide:nth-of-type(odd) & {
+			right: -45px;
+			top: -80px;
+		}
+		.swiper-slide:nth-of-type(even) & {
+			right: -37px;
+			top: -213px;
+		}
+	}
+	&__more {
+		align-items: center;
+		background-color: var(--color-accent-light);
+		border-radius: 50%;
+		bottom: -22px;
+		display: flex;
+		height: 0;
+		justify-content: center;
+		opacity: 0;
+		overflow: hidden;
+		position: absolute;
+		right: -15px;
+		transition: opacity .5s ease, width .25s ease, height .25s ease;
+		width: 0;
+	}
+	&__icon {
+		fill: var(--color-accent);
+		height: 0;
+		opacity: 0;
+		transition: opacity .5s ease, width .25s ease, height .25s ease;
+		width: 0;
+	}
+}

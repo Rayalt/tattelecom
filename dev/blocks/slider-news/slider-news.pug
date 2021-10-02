@@ -1,0 +1,21 @@
+//- Все примеси в этом файле должны начинаться c имени блока (slider-news)
+
+mixin slider-news(items)
+	.slider-news.swiper
+		.swiper-wrapper.slider-news__wrapper
+			each item in items
+				.swiper-slide.slider-news__slide
+					a.news-card(href='#')
+						.news-card__content
+							p.news-card__label!= item.label
+							h2.news-card__heading!= item.title
+						img.news-card__img(src='img/bg__lines_news-card_@1.png' srcset='img/bg__lines_news-card_@1.png 2x' alt='news card bg')
+						.news-card__more
+							svg.news-card__icon
+								use(xlink:href='img/svgSprite.svg#icon__arrow_line')
+		.swiper-button-prev.slider-news__button-prev
+			svg.slider-news__button-icon
+				use(xlink:href='img/svgSprite.svg#icon__shewron_large')
+		.swiper-button-next.slider-news__button-next
+			svg.slider-news__button-icon
+				use(xlink:href='img/svgSprite.svg#icon__shewron_large')

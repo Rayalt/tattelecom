@@ -1,0 +1,339 @@
+extends ../pug/layout_default.pug
+
+block variables
+
+block meta
+	title Главная страница
+
+block content
+	section.section.hero
+		.grid
+			.grid__row
+				.grid__col
+					.section__inner
+						.hero__content
+							p.hero__label Тариф «Летай.Оранжевый»
+							h1.hero__heading ВЫЖМИ СКОРОСТЬ
+							p.hero__descr Мощный интернет + ТВ 160 каналов
+							a.hero__button.button.button_primary(href='#') Подробнее
+		img.hero__img(src='img/img__hero_bg_@1.jpg' srcset='img/img__hero_bg_@2.jpg 2x' alt='Hero bg')
+		
+	section.section.tariff
+		.grid
+			.grid__row
+				.grid__col
+					.section__inner.tariff__inner
+						.section__header
+							h2.section__heading Тарифы мобильной связи
+							a.section__button(href='#')
+								span Все тарифы
+								svg.section__button-icon
+									use(xlink:href='img/svgSprite.svg#icon__shewron_small')
+						.tariff__slider
+							+slider-card([
+								{
+									accent: true,
+									title: 'Интернет + ТВ за 0 рублей',
+									label: 'Перейти по USSD *116*201#',
+									options: [
+										{icon: 'link', descr: 'Безлимитный интернет'},
+										{icon: 'phone', descr: '500 мин. звонки по РТ'},
+										{icon: 'phone-outgoing', descr: '300 мин. звонки по РФ'},
+										{icon: 'phone-call', descr: 'Безлимитные звонки на Летай'}
+									],
+									subtitle: 'Возможности',
+									text: 'Смартфоны в рассрочку',
+									cashback: 'Кешбек 20%',
+									price: '333',
+									buttonMod: 'secondary',
+									buttonTitle: 'Подключить',
+									linkTitle: 'Подробнее о тарифе'
+								},
+								{
+									title: 'Много интернета',
+									label: 'Перейти по USSD *116*204#',
+									options: [
+										{icon: 'link', descr: 'Безлимитный интернет'},
+										{icon: 'phone', descr: '200 мин. звонки по РТ'}
+									],
+									subtitle: 'Возможности',
+									text: 'Смартфоны в рассрочку',
+									cashback: 'Кешбек 20%',
+									price: '240',
+									buttonMod: 'primary',
+									buttonTitle: 'Подключить',
+									linkTitle: 'Подробнее о тарифе'
+								},
+								{
+									title: 'Много минут',
+									label: 'Перейти по USSD *116*201#',
+									options: [
+										{icon: 'link', descr: 'Безлимитный интернет'},
+										{icon: 'phone', descr: '500 мин. звонки по РТ'},
+										{icon: 'phone-outgoing', descr: '300 мин. звонки по РФ'},
+										{icon: 'phone-call', descr: 'Безлимитные звонки на Летай'}
+									],
+									subtitle: 'Возможности',
+									text: 'Смартфоны в рассрочку',
+									cashback: 'Кешбек 20%',
+									price: '350',
+									buttonMod: 'primary',
+									buttonTitle: 'Подключить',
+									linkTitle: 'Подробнее о тарифе'
+								},
+								{
+									title: 'Много минут',
+									label: 'Перейти по USSD *116*201#',
+									options: [
+										{icon: 'link', descr: 'Безлимитный интернет'},
+										{icon: 'phone', descr: '500 мин. звонки по РТ'},
+										{icon: 'phone-outgoing', descr: '300 мин. звонки по РФ'},
+										{icon: 'phone-call', descr: 'Безлимитные звонки на Летай'}
+									],
+									subtitle: 'Возможности',
+									text: 'Смартфоны в рассрочку',
+									cashback: 'Кешбек 20%',
+									price: '350',
+									buttonMod: 'primary',
+									buttonTitle: 'Подключить',
+									linkTitle: 'Подробнее о тарифе'
+								},
+								{
+									title: 'Интернет + ТВ за 0 рублей',
+									label: 'Перейти по USSD *116*201#',
+									options: [
+										{icon: 'link', descr: 'Безлимитный интернет'},
+										{icon: 'phone', descr: '500 мин. звонки по РТ'},
+										{icon: 'phone-outgoing', descr: '300 мин. звонки по РФ'},
+										{icon: 'phone-call', descr: 'Безлимитные звонки на Летай'}
+									],
+									subtitle: 'Возможности',
+									text: 'Смартфоны в рассрочку',
+									cashback: 'Кешбек 20%',
+									price: '333',
+									buttonMod: 'primary',
+									buttonTitle: 'Подключить',
+									linkTitle: 'Подробнее о тарифе'
+								},
+								{
+									title: 'Много интернета',
+									label: 'Перейти по USSD *116*204#',
+									options: [
+										{icon: 'link', descr: 'Безлимитный интернет'},
+										{icon: 'phone', descr: '200 мин. звонки по РТ'}
+									],
+									subtitle: 'Возможности',
+									text: 'Смартфоны в рассрочку',
+									cashback: 'Кешбек 20%',
+									price: '240',
+									buttonMod: 'primary',
+									buttonTitle: 'Подключить',
+									linkTitle: 'Подробнее о тарифе'
+								},
+								{
+									title: 'Много минут',
+									label: 'Перейти по USSD *116*201#',
+									options: [
+										{icon: 'link', descr: 'Безлимитный интернет'},
+										{icon: 'phone', descr: '500 мин. звонки по РТ'},
+										{icon: 'phone-outgoing', descr: '300 мин. звонки по РФ'},
+										{icon: 'phone-call', descr: 'Безлимитные звонки на Летай'}
+									],
+									subtitle: 'Возможности',
+									text: 'Смартфоны в рассрочку',
+									cashback: 'Кешбек 20%',
+									price: '350',
+									buttonMod: 'primary',
+									buttonTitle: 'Подключить',
+									linkTitle: 'Подробнее о тарифе'
+								},
+								{
+									title: 'Много минут',
+									label: 'Перейти по USSD *116*201#',
+									options: [
+										{icon: 'link', descr: 'Безлимитный интернет'},
+										{icon: 'phone', descr: '500 мин. звонки по РТ'},
+										{icon: 'phone-outgoing', descr: '300 мин. звонки по РФ'},
+										{icon: 'phone-call', descr: 'Безлимитные звонки на Летай'}
+									],
+									subtitle: 'Возможности',
+									text: 'Смартфоны в рассрочку',
+									cashback: 'Кешбек 20%',
+									price: '350',
+									buttonMod: 'primary',
+									buttonTitle: 'Подключить',
+									linkTitle: 'Подробнее о тарифе'
+								}
+							])
+	
+	section.section.quick-action
+		.grid
+			.grid__row
+				.grid__col
+					.section__inner.quick-action__inner
+						.quick-action__row
+							.action-card
+								.action-card__header
+									h2.action-card__heading Быстрое пополнение счета
+								.action-card__body
+									.action-card__tab-header
+										h3.action-card__tab.action-card__tab_active(data-tab='1') Мобильная связь
+										h3.action-card__tab(data-tab='2') Интернет
+										h3.action-card__tab(data-tab='3') Телевидение
+									.action-card__tab-body
+										.action-card__tab-content(data-content='1')
+											form.form.action-card__form
+												.form__grid
+													.form__feild.field
+														label.field__inner
+															.field__label Введите номер
+															input.field__input.input(required='required' type='tel' placeholder='+7 (      )         -     -  ' data-mask-tel)
+													.form__feild.field.field_sm
+														label.field__inner
+															.field__label От 10 до 30 000 ₽
+															input.field__input.input(required='required' type='text' placeholder='Сумма' data-mask-number)
+													button.form__button.button.button_primary Продолжить
+											p.action-card__info Нажимая кнопку «Продолжить», вы принимаете условия #[a(href='#') пользовательского соглашения].
+										.action-card__tab-content.action-card__tab-content_hidden(data-content='2')
+											form.form.action-card__form
+												.form__grid
+													.form__feild.field
+														label.field__inner
+															.field__label Введите номер2
+															input.field__input.input(required='required' type='tel' placeholder='+7 (      )         -     -  ' data-mask-tel)
+													.form__feild.field.field_sm
+														label.field__inner
+															.field__label От 10 до 40 000 ₽
+															input.field__input.input(required='required' type='text' placeholder='Сумма' data-mask-number)
+													button.form__button.button.button_primary Продолжить
+											p.action-card__info Нажимая кнопку «Продолжить», вы принимаете условия #[a(href='#') пользовательского соглашения].
+										.action-card__tab-content.action-card__tab-content_hidden(data-content='3')
+											form.form.action-card__form
+												.form__grid
+													.form__feild.field
+														label.field__inner
+															.field__label Введите номер3
+															input.field__input.input(required='required' type='tel' placeholder='+7 (      )         -     -  ' data-mask-tel)
+													.form__feild.field.field_sm
+														label.field__inner
+															.field__label От 10 до 50 000 ₽
+															input.field__input.input(required='required' type='text' placeholder='Сумма' data-mask-number)
+													button.form__button.button.button_primary Продолжить
+											p.action-card__info Нажимая кнопку «Продолжить», вы принимаете условия #[a(href='#') пользовательского соглашения].
+							.action-card.action-card_img
+								.action-card__header
+									h2.action-card__heading Личный кабинет
+								.action-card__body
+									p.action-card__text Максимум возможностей для управления счётом и услугами
+								.action-card__footer
+									a.action-card__button(href='#')
+										span Войти
+										svg.action-card__button-icon
+											use(xlink:href='img/svgSprite.svg#icon__arrow_line')
+								img.action-card__img(src='img/img__phone-woman_@1.png' srcset='img/img__phone-woman_@2.png 2x' alt='woman and phone')
+						.quick-action__row
+							.action-card.action-card_accent
+								.action-card__header.action-card__header_iconed
+									svg.action-card__icon
+										use(xlink:href='img/svgSprite.svg#icon__tariff')
+									h2.action-card__heading Переходите на “Летай” со своим номером
+								.action-card__body
+									form.form.action-card__form
+										.form__grid
+											.form__feild.field
+												label.field__inner
+													.field__label.field__label_invert Введите номер переноса
+													input.field__input.input(required='required' type='tel' placeholder='+7 (      )         -     -  ' data-mask-tel)
+											.form__feild.field.field_md
+												label.field__inner
+													.field__label.field__label_invert Укажите город проживания
+													.field__group
+														input.field__input.input.input_icon(required='required' type='search' value='Казань')
+											button.form__button.button.button_ghost-accent Начать перенос
+										.form__checkbox
+											label.checkbox
+												input.checkbox__input(type='checkbox' checked='checked')
+												.checkbox__mark
+												.checkbox__label Я соглашаюсь на получение консультации по переносу номера
+							.action-card.action-card_img
+								.action-card__header
+									h2.action-card__heading Красивые номера
+								.action-card__body
+									p.action-card__text Выберете номер с любимыми цифрами
+								.action-card__footer
+									a.action-card__button(href='#')
+										span Подобрать
+										svg.action-card__button-icon
+											use(xlink:href='img/svgSprite.svg#icon__arrow_line')
+								img.action-card__img(src='img/img__phone-man_@1.png' srcset='img/img__phone-man_@2.png 2x' alt='man and phone')
+	
+	section.section.news
+		.grid
+			.grid__row
+				.grid__col
+					.section__inner.news__inner
+						.news__row
+							.section__header
+								h2.section__heading Новости
+								a.section__button(href='#')
+									span Все новости
+									svg.section__button-icon
+										use(xlink:href='img/svgSprite.svg#icon__shewron_small')
+							.news__slider
+								+slider-news([
+									{
+										label: '22 май',
+										title: 'Провели праздник двора для жителей ЖК Салават Купере'
+									},
+									{
+										label: '21 май',
+										title: 'Летай приглашает жителей Альметьевска на эстафету'
+									},
+									{
+										label: '20 май',
+										title: 'Мы благодарим всех участников Летай Бонус и сообщаем о закрытии программы'
+									},
+									{
+										label: '19 май',
+										title: 'Летай приглашает жителей Альметьевска на эстафету'
+									},
+									{
+										label: '18 май',
+										title: 'Мы благодарим всех участников Летай Бонус и сообщаем о закрытии программы'
+									}
+								])
+						.news__row
+							.section__header
+								h2.section__heading Полезная информация
+							.news__info
+								+info-card([
+									{
+										img: 'intercom',
+										title: 'Домофония'
+									},
+									{
+										img: 'man',
+										title: 'Роуминг'
+									},
+									{
+										img: 'phones',
+										title: 'Приложения Таттелеком'
+									}
+								])
+	section.section.action
+		.grid
+			.grid__row
+				.grid__col.grid__col_xl-8.col-offset__xl-2
+					.action__inner
+						.action__info
+							h2.section__heading Оставьте заявку
+							p.action__text Заполните данные и наши специалисты свяжутся с вами.
+						form.form.action__form
+							.form__grid
+								.form__feild.field.action__field
+									label.field__inner
+										input.field__input.input(required='required' type='text' placeholder='Ваше имя')
+								.form__feild.field.action__field
+									label.field__inner
+										input.field__input.input(required='required' type='tel' placeholder='+7 (      )         -     -  ' data-mask-tel)
+								button.form__button.action__button.button.button_primary Жду звонка

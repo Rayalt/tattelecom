@@ -1,0 +1,32 @@
+// В этом файле должны быть стили для БЭМ-блока drop-secondary, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+.drop-secondary {
+	background: var(--color-white);
+	border-radius: 4px;
+	box-shadow: var(--info-card-shadow);
+	display: none;
+	list-style: none;
+	margin: 0;
+	padding: 16px;
+	position: absolute;
+	top: 32px;
+	z-index: 3;
+	.drop-secondary-open & {
+		display: block;
+	}
+	.drop-tertiary-open & {
+		display: none;
+	}
+	&__item + &__item {
+		margin-top: 8px;
+	}
+	&__link {
+		color: inherit;
+		text-decoration: none;
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+}

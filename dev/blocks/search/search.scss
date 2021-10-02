@@ -1,0 +1,80 @@
+// В этом файле должны быть стили для БЭМ-блока search, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+.search {
+	align-items: center;
+	display: flex;
+	height: 52px;
+	position: relative;
+	width: 80px;
+	&__inner {
+		align-items: center;
+		display: flex;
+		height: 100%;
+		overflow: hidden;
+		position: absolute;
+		right: 0;
+		transition: width .25s ease-in-out;
+		width: 100%;
+		.header-search-open & {
+			width: 993px;
+		}
+	}
+	&__icon {
+		fill: var(--color-secondary);
+		height: 24px;
+		position: absolute;
+		width: 24px;
+	}
+	&__input {
+		appearance: none;
+		border-bottom: 2px solid var(--color-quaternary);
+		border: none;
+		color: var(--color-secondary);
+		font-size: 15px;
+		font-weight: 600;
+		height: 100%;
+		line-height: 1.2;
+		outline: none;
+		padding: 13px 0 13px 29px;
+		width: 100%;
+		&::placeholder {
+			color: var(--color-secondary);
+		}
+		&::-webkit-search-cancel-button {
+			-webkit-appearance: none;
+		}
+		&:focus {
+			
+		}
+	}
+	&__cleaner {
+		cursor: pointer;
+		display: none;
+		height: 24px;
+		opacity: 1;
+		position: relative;
+		transition: opacity .125s ease;
+		width: 24px;
+		&:hover {
+			opacity: .6;
+		}
+		&::after,
+		&::before {
+			background: var(--color-primary);
+			content: '';
+			display: block;
+			height: 2px;
+			position: absolute;
+			transform-origin: center;
+			width: 16px;
+		}
+		&::after {
+			transform: translate(4px, 12px) rotate(45deg);
+		}
+		&::before {
+			transform: translate(4px, 12px) rotate(-45deg);
+		}
+	}
+}

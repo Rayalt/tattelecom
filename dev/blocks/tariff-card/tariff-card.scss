@@ -1,0 +1,127 @@
+// В этом файле должны быть стили для БЭМ-блока tariff-card, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+.tariff-card {
+	border-radius: 10px;
+	box-shadow: var(--box-shadow-bottom);
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+	line-height: 1.285;
+	min-height: 543px;
+	padding: 22px 24px 24px 18px;
+	position: relative;	
+	&_invert {
+		background-color: var(--color-primary);
+		color: var(--color-white);
+	}
+	&__icon {
+		height: 48px;
+		position: absolute;
+		right: 24px;
+		top: 0;
+		width: 34px;
+	}
+	&__bg {
+		height: 166px;
+		left: -65%;
+		position: absolute;
+		top: 37%;
+		transform: rotate(-50deg);
+		width: 705px;
+	}
+	&__row + &__row {
+		box-shadow: var(--inner-shadow-top-thin);
+		margin-top: auto;
+		padding-top: 8px;
+	}
+	&__row {
+		display: flex;
+		flex-direction: column;
+		&:last-of-type {
+			margin-top: 17px;
+			padding-top: 28px;
+		}
+	}
+	
+	&__title {
+		font-size: 20px;
+		font-weight: 600;
+		margin: 0;
+		.tariff-card_invert & {
+			max-width: 200px;
+		}
+	}
+	&__label {
+		font-size: 12px;
+		font-weight: 400;
+		margin: 7px 0 0 0;
+		.tariff-card_invert & {
+			margin-top: 12px;
+		}
+	}
+	&__option-set {
+		margin-top: 7px;
+	}
+	&__option {
+		align-items: center;
+		display: flex;
+		margin-top: 26px;
+		.tariff-card_invert & {
+			margin-top: 8px;
+		}
+	}
+	&__option + &__option {
+		margin-top: 12px;
+	}
+	&__option-icon {
+		height: 18px;
+		margin-right: 16px;
+		width: 18px;
+	}
+	&__option-descr {
+		font-size: 14px;
+		margin: 0;
+	}
+	&__subtitle {
+		font-size: 14px;
+		font-weight: 300;
+		margin: 0;
+	}
+	&__text {
+		font-size: 14px;
+		font-weight: 400;
+		margin: 13px 0 0 0;
+	}
+	&__text + &__text {
+		margin-top: 5px;
+	}
+	&__price {
+		font-size: 40px;
+		font-weight: 400;
+		margin: 0;
+		text-align: right;
+		span {
+			font-size: 18px;
+			margin-left: 5px;
+		}
+	}
+	&__button {
+		font-size: 14px;
+		height: 48px;
+		margin-top: 15px;
+	}
+	&__link	{
+		color: inherit;
+		font-size: 14px;
+		font-weight: 300;
+		margin-left: auto;
+		margin-right: auto;
+		margin-top: 14px;
+		text-decoration: underline;
+		&:hover {
+			text-decoration: none;
+		}
+	}
+}
