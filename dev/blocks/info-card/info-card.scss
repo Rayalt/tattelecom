@@ -6,28 +6,42 @@
 	color: inherit;
 	display: flex;
 	flex-direction: column;
+	height: 100%;
 	text-decoration: none;
 	&__heading {
-		font-size: 20px;
+		font-size: 16px;
 		font-weight: 400;
 		letter-spacing: 0.015em;
 		line-height: 1.65;
 		margin: 0;
+		@media (min-width: $screen-lg) {
+			font-size: 20px;
+		}
 	}
 	&__cover {
 		border-radius: 5px;
-		height: 329px;
+		flex-shrink: 0;
+		height: 227px;
 		overflow: hidden;
 		position: relative;
 		z-index: 2;
+		@media (min-width: $screen-lg) {
+			height: 329px;
+		}
 	}
 	&__content {
 		background-color: var(--color-white);
 		border-radius: 5px;
 		box-shadow: var(--info-card-shadow);
+		display: flex;
+		flex-direction: column;
+		height: 100%;
 		overflow: hidden;
-		padding: 25px 93px 21px 22px;
+		padding: 17px 43px 15px 15px;
 		position: relative;
+		@media (min-width: $screen-lg) {
+			padding: 25px 93px 21px 22px;
+		}
 	}
 	&__img {
 		height: 100%;
@@ -41,21 +55,29 @@
 	}
 	&:hover {
 		.info-card__more {
-			height: 120px;
+			height: 60px;
 			opacity: 1;
-			width: 120px;
+			width: 60px;
+			@media (min-width: $screen-lg) {
+				height: 120px;
+				width: 120px;
+			}
 		}
 		.info-card__icon {
-			height: 42px;
+			height: 32px;
 			opacity: 1;
-			width: 42px;
+			width: 32px;
+			@media (min-width: $screen-lg) {
+				height: 42px;
+				width: 42px;
+			}
 		}
 	}
 	&__more {
 		align-items: center;
 		background-color: var(--color-accent-light);
 		border-radius: 50%;
-		bottom: -25px;
+		bottom: -10px;
 		box-shadow: var(--info-card-shadow);
 		display: flex;
 		height: 0;
@@ -63,9 +85,13 @@
 		opacity: 0;
 		overflow: hidden;
 		position: absolute;
-		right: -27px;
+		right: -10px;
 		transition: opacity .5s ease, width .25s ease, height .25s ease;
 		width: 0;
+		@media (min-width: $screen-lg) {
+			bottom: -25px;
+			right: -27px;
+		}
 	}
 	&__icon {
 		fill: var(--color-accent);

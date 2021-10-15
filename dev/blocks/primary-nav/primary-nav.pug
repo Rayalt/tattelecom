@@ -1,0 +1,8 @@
+//- Все примеси в этом файле должны начинаться c имени блока (primary-nav)
+
+mixin primary-nav(items)
+	nav.primary-nav
+		ul.primary-nav__list
+			each item in items
+				li.primary-nav__item
+					a.primary-nav__link(href= item.href target= item.isTarget === true ? '_blank': '' data-nav-tab= item.tab class= item.isActive === true ? 'primary-nav__link_active': '' )!= item.link

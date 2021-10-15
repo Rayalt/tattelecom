@@ -13,6 +13,6 @@ mixin secondary-nav(items)
 						ul.drop-secondary
 							each link in item.link
 								li.drop-secondary__item(data-drop-item='true')
-									a.drop-secondary__link(href= link.href target= link.isTarget ? '_blank' : '')!= link.link
+									a.drop-secondary__link(href= link.href target= link.isTarget === true ? '_blank' : '')!= link.link
 					else
-						a.secondary-nav__link(href= item.href target= item.isTarget ? '_blank' : '')!= item.link
+						a.secondary-nav__link(href= item.href target= item.isTarget === true ? '_blank' : '')!= item.link

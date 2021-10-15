@@ -8,13 +8,16 @@
 	border: none;
 	box-shadow: var(--form-shadow);
 	color: var(--color-primary);
-	font-size: 16px;
+	font-size: 12px;
 	font-weight: 300;
 	letter-spacing: 0.02em;
 	line-height: 1.6;
 	outline: none;
 	padding: 14px 16px;
 	position: relative;
+	@media (min-width: 375px) {
+		font-size: 16px;
+	}
 	&::placeholder {
 		color: var(--color-teritary);
 	}

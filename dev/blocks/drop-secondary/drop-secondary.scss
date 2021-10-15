@@ -5,25 +5,46 @@
 .drop-secondary {
 	background: var(--color-white);
 	border-radius: 4px;
+	border: 1px solid var(--color-quinary);
 	box-shadow: var(--info-card-shadow);
 	display: none;
+	flex-direction: column;
+	left: -4px;
 	list-style: none;
 	margin: 0;
 	padding: 16px;
 	position: absolute;
 	top: 32px;
+	width: 150px;
 	z-index: 3;
+	&::before, &::after {
+		border: 10px solid transparent;
+		border-top: 10px solid var(--color-quinary);
+		content: '';
+		left: 20px;
+		position: absolute;
+		top: -20px;
+		transform: rotate(180deg);
+	}
+	&::after {
+		border-top: 10px solid var(--color-white);
+		top: -18px;
+	}
 	.drop-secondary-open & {
-		display: block;
+		display: flex;
 	}
 	.drop-tertiary-open & {
 		display: none;
+	}
+	&__item {
+		margin-right: auto;
 	}
 	&__item + &__item {
 		margin-top: 8px;
 	}
 	&__link {
 		color: inherit;
+		display: block;
 		text-decoration: none;
 		&:hover {
 			text-decoration: underline;

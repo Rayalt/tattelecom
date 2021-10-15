@@ -5,8 +5,15 @@
 .quick-action {
 	&__row {
 		display: flex;
+		flex-direction: column;
+		@media (min-width: $screen-md) {
+			flex-direction: row;
+		}
 		&:nth-of-type(even) {
-			flex-direction: row-reverse;
+			flex-direction: column-reverse;
+			@media (min-width: $screen-md) {
+				flex-direction: row-reverse;
+			}
 		}
 	}
 	&__row + &__row {

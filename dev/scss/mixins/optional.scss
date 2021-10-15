@@ -1,0 +1,23 @@
+.swiper-button-disabled {
+	.slider-news & {
+		display: none;
+	}
+}
+
+.swiper-button-next, .swiper-button-prev, .swiper-pagination {
+	z-index: 2;
+}
+
+.swiper-pagination-bullet {
+	background-color: var(--color-secondary);
+	height: 12px;
+	width: 12px;
+
+}
+.swiper-pagination-bullet-active {
+	background-color: var(--color-accent);
+}
+
+.swiper-button-lock {
+	display: none !important;
+}

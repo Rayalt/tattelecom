@@ -1,0 +1,15 @@
+//- Все примеси в этом файле должны начинаться c имени блока (menu)
+
+mixin menu(items, mod, tab)
+	- mod = mod || ''
+	- tab = tab || ''
+	.menu__inner(class= mod data-menu-content= tab)
+		each item in items
+			.menu__group
+				a.menu__link.menu__link_heading(href= item.href target= item.isTarget === true ? '_blank' : '' class= item.isActive === true ? 'menu__link_active': '')!= item.title
+				if item.hasNav === true
+					nav.menu__nav
+						ul.menu__list
+							each link in item.link
+								li.menu__item
+									a.menu__link(href= link.href target= link.isTarget === true ? '_blank' : '' class= link.isActive === true ? 'menu__link_active': '')!= link.link

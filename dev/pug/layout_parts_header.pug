@@ -1,14 +1,41 @@
 header.header
+	.header__nav-set.header__nav-set_mob
+		.grid
+			.grid__row
+				.grid__col
+					.header__inner
+						.header__secondary-nav
+							+secondary-nav([
+								{isSelect: true, title: 'Частным клиентам', link:
+									[
+										{link: 'Бизнесу', href: '#'},
+										{link: 'Что-то еще', href: '#'},
+										{link: 'Что-то еще2', href: '#'}
+									]
+								}
+							])
+						.header__tertiary-nav
+							+tertiary-nav([
+								{isIconed: true, isSelect: true, href: '#', title: 'Казань', icon: 'navigation', link:
+									[
+										{link: 'Москва', href: '#'},
+										{link: 'Санкт-Петербург', href: '#'},
+										{link: 'Екатеринбург', href: '#'}
+									]
+								}
+							])
 	.grid
 		.grid__row
 			.grid__col
 				.header__inner
 					.header__logo-set
-						svg.header__logo
-							use(xlink:href='img/svgSprite.svg#logo')
+						svg.header__logo-primary
+							use(xlink:href='img/svgSprite.svg#logo_primary')
+						svg.header__logo-secondary
+							use(xlink:href='img/svgSprite.svg#logo_secondary')
 						svg.header__tariff
 							use(xlink:href='img/svgSprite.svg#tariff')
-					.header__menu-set
+					.header__nav-set.header__nav-set_desk
 						.header__row
 							.header__secondary-nav
 								+secondary-nav([
@@ -22,7 +49,7 @@ header.header
 										]
 									}
 								])
-							.header__menu-tertiary
+							.header__tertiary-nav
 								+tertiary-nav([
 									{link: 'Поддержка', href: '#'},
 									{link: 'Офисы продаж', href: '#'},
@@ -34,16 +61,16 @@ header.header
 											{link: 'Екатеринбург', href: '#'}
 										]
 									},
-									{isIconed: true, link: 'Личный кабинет', icon: 'person', href: '#'},
+									{isIconed: true, link: 'Личный кабинет', icon: 'person', href: '#'}
 								])
 						.header__row
-							.header__main-nav
-								+main-nav([
-									{link: 'Мобильная связь', href: '#'},
-									{link: 'Интернет', href: '#'},
-									{link: 'Телевидение', href: '#'},
-									{link: 'Домофон', href: '#'},
-									{link: 'Каталог устройств', href: '#'}
+							.header__primary-nav
+								+primary-nav([
+									{link: 'Мобильная связь', href: '#', tab: '0', isActive: true},
+									{link: 'Интернет', href: '#', tab: '1'},
+									{link: 'Телевидение', href: '#', tab: '2'},
+									{link: 'Домофон', href: '#', tab: '3'},
+									{link: 'Каталог устройств', href: '#', tab: '4'}
 								])
 							.header__actions
 								.header__button
@@ -55,3 +82,8 @@ header.header
 												use(xlink:href='/img/svgSprite.svg#icon__search')
 											input.search__input(type='search' placeholder='Поиск')
 											.search__cleaner
+					a.header__account(href='#')
+						svg.header__account-icon
+							use(xlink:href='img/svgSprite.svg#icon__person')
+					svg.header__menu
+						use(xlink:href='img/svgSprite.svg#icon__menu')

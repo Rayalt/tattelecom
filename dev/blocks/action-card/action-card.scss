@@ -8,21 +8,44 @@
 	box-shadow: var(--box-shadow-bottom);
 	display: flex;
 	flex-direction: column;
-	padding: 36px 40px 35px;
+	padding: 22px 20px 24px 18px;
 	position: relative;
-	width: 58.33%;
+	@media (min-width: $screen-md) {
+		padding: 32px;
+		width: 55%;
+	}
+	@media (min-width: $screen-lg) {
+		padding: 36px 40px 35px;
+		width: 58.33%;
+	}
 	&_img {
-		margin-left: 30px;
-		padding-bottom: 25px;
-		width: 41.67%;
+		margin-top: 30px;
+		min-height: 280px;
+		overflow: hidden;
+		padding-bottom: 28px;
+		@media (min-width: $screen-md) {
+			margin-left: 30px;
+			margin-top: 0;
+			min-height: auto;
+			width: 45%;
+		}
+		@media (min-width: $screen-lg) {
+			width: 41.67%;
+		}
 		.quick-action__row:nth-of-type(even) & {
+			margin-bottom: 30px;
 			margin-left: 0;
-			margin-right: 30px;
+			margin-top: 0;
+			@media (min-width: $screen-md) {
+				margin-bottom: 0;
+				margin-right: 30px;
+			}
 		}
 	}
 	&_accent {
 		background-color: var(--color-accent);
 		color: var(--color-white);
+		padding-bottom: 27px;
 	}
 	&__header {
 		max-width: 388px;
@@ -31,39 +54,63 @@
 		&_iconed {
 			align-items: center;
 			display: flex;
-			transform: translateY(-8px);
+			@media (min-width: 600px) {
+				transform: translateY(-8px);
+			}
 		}
 	}
 	&__heading {
-		font-size: 26px;
+		font-size: 20px;
 		font-weight: 400;
-		line-height: 1.3;
+		line-height: 1.6;
 		margin: 0;
+		@media (min-width: $screen-md) {
+			font-size: 26px;
+			line-height: 1.3;
+		}
 	}
 	&__icon {
 		fill: var(--color-white);
 		flex-shrink: 0;
-		height: 60px;
-		margin-right: 21px;
-		width: 54px;
+		height: 48px;
+		margin-right: 17px;
+		width: 45px;
+		@media (min-width: 600px) {
+			height: 60px;
+			margin-right: 21px;
+			width: 54px;
+		}
 	}
 	&__body {
-		margin-top: 28px;
+		margin-top: 16px;
 		position: relative;
 		z-index: 2;
+		@media (min-width: 600px) {
+			margin-top: 28px;
+		}
 		.action-card_img & {
-			padding-right: 220px;
+			margin-top: 14px;
+			padding-right: 112px;
+			@media (min-width: $screen-lg) {
+				padding-right: 220px;
+			}
 		}
 		.action-card_accent & {
-			margin-top: 0;
+			margin-top: 12px;
+			@media (min-width: 600px) {
+				margin-top: 0;
+			}
 		}
 	}
 	&__text {
-		font-size: 16px;
+		font-size: 14px;
 		font-weight: 300;
 		letter-spacing: 0.02em;
 		line-height: 1.6;
 		margin: 0;
+		@media (min-width: 600px) {
+			font-size: 16px;
+		}
 	}
 	&__tab-header {
 		box-shadow: var(--inner-shadow-bottom-thin);
@@ -78,23 +125,34 @@
 	&__tab {
 		color: var(--color-teritary);
 		cursor: pointer;
-		font-size: 16px;
+		font-size: 14px;
 		font-weight: 400;
 		letter-spacing: 0.02em;
-		line-height: 1.6;
+		line-height: 1.2;
 		margin: 0;
-		padding-bottom: 11px;
+		padding-bottom: 18px;
 		user-select: none;
+		@media (min-width: $screen-md) {
+			font-size: 16px;
+			line-height: 1.6;
+			padding-bottom: 11px;
+		}
 		&_active {
 			box-shadow: var(--inner-shadow-bottom-accent);
 			color: var(--color-accent);
 		}
 	}
 	&__tab + &__tab {
-		margin-left: 30px;
+		margin-left: 10px;
+		@media (min-width: $screen-md) {
+			margin-left: 30px;
+		}
 	}
 	&__form {
-		margin-top: 32px;
+		margin-top: 19px;
+		@media (min-width: $screen-lg) {
+			margin-top: 32px;
+		}
 	}
 	&__footer {
 		display: flex;
@@ -104,11 +162,15 @@
 		z-index: 2;
 	}
 	&__info {
-		font-size: 14px;
+		font-size: 12px;
 		font-weight: 300;
 		letter-spacing: 0.02em;
 		line-height: 1.6;
-		margin: 34px 0 0 0;
+		margin: 15px 0 0 0;
+		@media (min-width: 600px) {
+			font-size: 14px;
+			margin-top: 34px;
+		}
 		a {
 			color: inherit;
 			text-decoration: underline;
@@ -146,9 +208,14 @@
 		width: 38px;
 	}
 	&__img {
-		bottom: 15px;
+		bottom: 22px;
+		height: 152px;
 		position: absolute;
-		right: 26px;
+		right: 30px;
+		@media (min-width: 600px) {
+			bottom: 15px;
+			height: 225px;
+			right: 26px;
+		}
 	}
-	
 }

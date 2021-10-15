@@ -1,0 +1,23 @@
+//- Все примеси в этом файле должны начинаться c имени блока (slider-info)
+
+mixin slider-info(items)
+	.slider-info.swiper
+		.swiper-wrapper.slider-info__wrapper
+			each item in items
+				.swiper-slide.slider-info__slide
+					a.info-card(href='#')
+						.info-card__cover
+							img.info-card__img(src='img/img__' + item.img + '_@1.jpg' srcset='img/img__' + item.img + '_@2.jpg 2x' alt=item.img)
+						.info-card__content
+							.info-card__text
+								h2.info-card__heading!= item.title
+							.info-card__more
+								svg.info-card__icon
+									use(xlink:href='img/svgSprite.svg#icon__arrow_line')
+		.swiper-pagination.slider-info__pagination
+		.swiper-button-prev.slider-info__button-prev
+			svg.slider-info__button-icon
+				use(xlink:href='img/svgSprite.svg#icon__shewron_large')
+		.swiper-button-next.slider-info__button-next
+			svg.slider-info__button-icon
+				use(xlink:href='img/svgSprite.svg#icon__shewron_large')

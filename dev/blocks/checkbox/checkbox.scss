@@ -3,10 +3,13 @@
 // Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
 
 .checkbox {
-	align-items: center;
+	align-items: flex-start;
 	cursor: pointer;
 	display: flex;
 	position: relative;
+	@media (min-width: 600px) {
+		align-items: center;
+	}
 	&:hover ~ .checkbox__input {
 		.checkbox__mark {
 			background-color: var(--color-quinary);
@@ -49,10 +52,13 @@
 		}
 	}
 	&__label {
-		font-size: 14px;
+		font-size: 12px;
 		font-weight: 300;
 		letter-spacing: 0.02em;
 		line-height: 1.6;
 		user-select: none;
+		@media (min-width: 600px) {
+			font-size: 14px;
+		}
 	}
 }

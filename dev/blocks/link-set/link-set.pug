@@ -3,6 +3,11 @@
 mixin link-set(title, items)
 	- title = title || ''
 	.link-set
-		h2.link-set__title!= title
-		each item in items
-			a.link-set__link(href= item.href target= item.isTarget ? '_blank' : '')!= item.link
+		.link-set__header
+			h2.link-set__title!= title
+			svg.link-set__icon
+				use(xlink:href='img/svgSprite.svg#icon__shewron_large')
+		.link-set__body
+			.link-set__inner
+				each item in items
+					a.link-set__link(href= item.href target= item.isTarget === true ? '_blank' : '')!= item.link

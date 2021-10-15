@@ -3,30 +3,42 @@
 // Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
 
 .field {
-	flex-grow: 1;
+	@media (min-width: $screen-lg) {
+		flex-grow: 1;
+	}
 	&_sm {
-		flex-grow: 0;
-		width: 126px;
+		@media (min-width: $screen-lg) {
+			width: 126px;
+			flex-grow: 0;
+		}
 	}
 	&_md {
-		flex-grow: 0;
-		width: 188px;
+		@media (min-width: $screen-lg) {
+			width: 188px;
+			flex-grow: 0;
+		}
 	}
-	&__inner {
-		
-	}
+	&__inner {}
 	&__label {
 		color: var(--color-teritary);
+		display: none;
 		font-size: 12px;
 		font-weight: 300;
 		letter-spacing: 0.02em;
 		line-height: 1.6;
+		margin-bottom: 10px;
+		@media (min-width: 600px) {
+			display: block;
+			margin-bottom: 5px;
+		}
 		&_invert {
 			color: var(--color-white);
 		}
+		.action-card_accent & {
+			display: block;
+		}
 	}
 	&__input {
-		margin-top: 5px;
 		width: 100%;
 	}
 }

@@ -3,30 +3,61 @@
 // Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
 
 .action {
+	position: relative;
+	overflow: hidden;
 	&__inner {
 		align-items: center;
 		display: flex;
 		flex-direction: column;
-		padding: 115px 0;
+		padding: 35px 0 47px;
+		position: relative;
 		text-align: center;
+		z-index: 2;
+		@media (min-width: $screen-lg) {
+			padding: 115px 0;
+		}
 	}
 	&__text {
 		color: var(--color-secondary);
-		font-size: 20px;
+		font-size: 16px;
 		font-weight: 400;
 		letter-spacing: 0.015em;
 		line-height: 1.65;
-		margin: 36px 0 0 0;
-		max-width: 470px;
+		margin: 24px 0 0 0;
+		max-width: 300px;
+		@media (min-width: $screen-lg) {
+			font-size: 20px;
+			margin-top: 36px;
+			max-width: 470px;
+		}
 	}
 	&__form {
-		margin-top: 44px;
+		margin-top: 40px;
 		max-width: 798px;
+		@media (min-width: $screen-lg) {
+			margin-top: 44px;
+		}
 	}
 	&__field:first-of-type {
-		width: 248px;
+		@media (min-width: $screen-xl) {
+			width: 248px;
+		}
 	}
 	&__button {
-		width: 220px !important;
+		height: 54px !important;
+		@media (min-width: $screen-sm) {
+			width: 220px !important;
+		}
+	}
+	&__img {
+		bottom: -142px;
+		display: none;
+		height: 464px;
+		left: 50%;
+		position: absolute;
+		transform: translateX(-50%);
+		@media (min-width: $screen-sm) {
+			display: block;
+		}
 	}
 }

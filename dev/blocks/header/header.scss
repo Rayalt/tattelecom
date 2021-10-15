@@ -8,28 +8,139 @@
 		align-items: center;
 		display: flex;
 		justify-content: space-between;
-		padding: 15px 0 13px;
+		padding: 13px 0;
+		@media (min-width: $screen-xl) {
+			padding: 15px 0 13px;
+		}
+		.header__nav-set & {
+			padding: 8px 0 6px;
+		}
+	}
+	&__account {
+		align-items: center;
+		display: flex;
+		flex-shrink: 0;
+		height: 20px;
+		justify-content: center;
+		margin-left: auto;
+		width: 20px;
+		@media (min-width: $screen-xl) {
+			display: none;
+		}
+		&:hover {
+			.header__account-icon {
+				fill: var(--color-accent);
+			}
+		}
+	}
+	&__account-icon {
+		fill: var(--color-primary);
+		flex-shrink: 0;
+		height: 100%;
+		transition: fill .25s ease;
+		width: 100%;
+	}
+	&__menu {
+		fill: var(--color-primary);
+		flex-shrink: 0;
+		height: 24px;
+		margin-left: 8px;
+		transition: fill .25s ease;
+		width: 24px;
+		@media (min-width: 375px) {
+			margin-left: 18px;
+		}
+		@media (min-width: $screen-xl) {
+			display: none;
+		}
+		&:hover {
+			fill: var(--color-accent);
+		}
 	}
 	&__logo-set {
-		align-items: flex-end;
+		align-items: center;
 		display: flex;
-		padding-bottom: 13px;
+		@media (min-width: $screen-md) {
+			margin-right: 32px;
+		}
+		@media (min-width: $screen-xl) {
+			align-items: flex-end;
+			padding-bottom: 13px;
+		}
+		
 	}
-	&__logo {
+	&__logo-primary {
+		display: none;
 		height: 24px;
 		width: 125px;
+		@media (min-width: $screen-xl) {
+			display: block;
+		}
+	}
+	&__logo-secondary {
+		display: block;
+		height: 14px;
+		margin-right: 8px;
+		width: 131px;
+		@media (min-width: 375px) {
+			margin-right: 24px;
+		}
+		@media (min-width: $screen-xl) {
+			display: none;
+		}
 	}
 	&__tariff {
-		height: 40px;
-		margin-left: 16px;
-		width: 113px;
+		height: 29px;
+		width: 84px;
+		@media (min-width: $screen-xl) {
+			height: 40px;
+			width: 113px;
+			margin-left: 16px;
+		}
 	}
-	&__menu-set {}
-	&__main-nav {
-		transition: opacity .25s ease;
+	&__nav-set {
+		&_mob {
+			background-color: var(--color-quinary);
+			@media (min-width: $screen-xl) {
+				display: none;
+			}
+		}
+		&_desk {
+			display: none;
+			@media (min-width: $screen-md) {
+				display: block;
+			}
+		}
+	}
+	&__primary-nav {
+		display: none;
+		flex-shrink: 0;
+		transition: opacity .2s ease, height .5s ease, transform .5s ease;
+		@media (min-width: $screen-md) {
+			display: flex;
+		}
 		.header-search-open & {
-			opacity: 0;
-			transition: opacity .25s ease;
+			@media (min-width: $screen-xl) {
+				opacity: 0;
+				transform: translateY(-119px);
+				transition: opacity .2s ease, height .25s ease, transform .5s ease;
+			}
+		}
+	}
+	&__secondary-nav {
+		.header__row & {
+			display: none;
+			@media (min-width: $screen-xl) {
+				display: block;
+			}
+		}
+	}
+	&__tertiary-nav {
+		.header__row & {
+			display: none;
+			@media (min-width: $screen-xl) {
+				display: block;
+			}
 		}
 	}
 	&__row {
@@ -38,20 +149,28 @@
 		justify-content: space-between;
 	}
 	&__row + &__row {
-		box-shadow: var(--inner-shadow-top);
-		margin-top: 11px;
-		padding-top: 12px;
-		
+		@media (min-width: $screen-xl) {
+			box-shadow: var(--inner-shadow-top);
+			margin-top: 11px;
+			padding-top: 12px;
+		}
 	}
 	&__actions {
 		display: flex;
 		margin-left: 79px;
 	}
 	&__button {
+		display: none;
 		width: 174px;
+		@media (min-width: $screen-xl) {
+			display: flex;
+		}
 	}
 	&__search {
+		display: none;
 		margin-left: 18px;
+		@media (min-width: $screen-xl) {
+			display: block;
+		}
 	}
-	
 }

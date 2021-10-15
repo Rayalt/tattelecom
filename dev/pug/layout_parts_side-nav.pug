@@ -1,0 +1,25 @@
+.side-nav
+	.side-nav__inner
+		.side-nav__search
+			.search
+				.search__inner
+					svg.search__icon
+						use(xlink:href='/img/svgSprite.svg#icon__search')
+					input.search__input(type='search' placeholder='Поиск')
+					.search__cleaner
+		.side-nav__tertiary
+			+tertiary-nav([
+				{link: 'Поддержка', href: '#'},
+				{link: 'Офисы продаж', href: '#'},
+				{link: 'Оплата', href: '#'},
+			])
+		.side-nav__primary
+			+primary-nav([
+				{link: 'Мобильная связь', href: '#', tab: '0', isActive: true},
+				{link: 'Интернет', href: '#', tab: '1'},
+				{link: 'Телевидение', href: '#', tab: '2'},
+				{link: 'Домофон', href: '#', tab: '3'},
+				{link: 'Каталог устройств', href: '#', tab: '4'}
+			])
+		.side-nav__button
+			a.button.button_primary(href="#") Стать абонентом

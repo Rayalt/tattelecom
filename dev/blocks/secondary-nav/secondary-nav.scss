@@ -5,16 +5,21 @@
 .secondary-nav {
 	color: var(--color-teritary);
 	font-size: 14px;
-	font-weight: 700;
+	font-weight: 500;
 	line-height: 1.2;
+	@media (min-width: $screen-xl) {
+		font-weight: 700;
+	}
 	&__list {
-		display: flex;
+		display: grid;
+		grid-auto-flow: column;
+		grid-gap: 20px;
 		list-style: none;
 		margin: 0;
 		padding: 0;
 	}
-	&__item + &__item {
-		margin-left: 20px;
+	&__item {
+		position: relative;
 	}
 	&__link {
 		color: inherit;
@@ -26,7 +31,6 @@
 	&__drop-trigger {
 		align-items: center;
 		display: flex;
-		position: relative;
 		&:hover {
 			cursor: pointer;
 		}
@@ -36,6 +40,7 @@
 	}
 	&__drop-icon {
 		fill: var(--color-teritary);
+		flex-shrink: 0;
 		height: 16px;
 		width: 16px;
 	}

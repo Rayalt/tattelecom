@@ -1,20 +1,24 @@
-// В этом файле должны быть стили для БЭМ-блока slider-card, его элементов,
+// В этом файле должны быть стили для БЭМ-блока slider-info, его элементов,
 // модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
 // Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
 
-.slider-card {
-	padding: 20px 15px 20px 15px;
+.slider-info {
+	padding: 20px 15px;
 	position: static;
 	@media (min-width: $screen-sm) {
-		padding: 20px 15px 54px 15px;
+		padding-bottom: 44px;
+	}
+	@media (min-width: $screen-lg) {
+		padding-bottom: 20px;
 	}
 	&__wrapper {
 		display: grid;
 		grid-auto-flow: column;
+		grid-auto-rows: 1fr;
 	}
 	&__slide {
 		@media (max-width: 767px) {
-			width: 266px !important;
+			width: 285px !important;
 		}
 	}
 	&__pagination {
@@ -23,20 +27,23 @@
 		@media (min-width: $screen-sm) {
 			display: block;
 		}
+		@media (min-width: $screen-lg) {
+			display: none;
+		}
 	}
 	&__button-prev, &__button-next {
 		background: var(--color-white);
 		border-radius: 3px;
 		box-shadow: var(--box-shadow-centered);
 		display: none;
+		height: 50px;
 		padding: 12px;
+		width: 50px;
 		@media (min-width: $screen-lg) {
 			display: flex;
-			height: 50px;
-			width: 50px;
 		}
 		&:hover {
-			.slider-card__button-icon {
+			.slider-news__button-icon {
 				fill: var(--color-accent);
 			}
 		}
@@ -72,7 +79,7 @@
 		height: 24px;
 		transition: fill .25s ease;
 		width: 24px;
-		.slider-card__button-prev & {
+		.slider-news__button-prev & {
 			transform: rotate(180deg);
 		}
 	}

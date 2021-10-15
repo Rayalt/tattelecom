@@ -3,49 +3,69 @@
 // Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
 
 .news-card {
+	align-items: center;
+	background-color: var(--color-white);
 	border-radius: 5px;
-	box-shadow: var(--box-shadow-bottom);
+	border: 1px solid var(--color-quinary);
 	color: inherit;
 	display: flex;
 	flex-direction: column;
 	height: 100%;
+	min-height: 140px;
 	overflow: hidden;
-	padding: 11px 53px 16px 24px;
+	padding: 18px 53px 16px 24px;
 	position: relative;
 	text-decoration: none;
+	transition: box-shadow .25s ease, border .25s ease, height .25s ease, transform .25s ease, border .25s ease;
+	@media (min-width: $screen-lg) {
+		padding: 11px 53px 16px 24px;
+	}
 	&:hover {
+		border: 1px solid transparent;
+		box-shadow: var(--box-shadow-bottom);
+		height: calc(100% + 8px);
+		transform: translateY(-4px);
 		.news-card__img {
 			opacity: 0;
 		}
 		.news-card__more {
-			height: 111px;
 			opacity: 1;
-			width: 111px;
 		}
 		.news-card__icon {
 			height: 42px;
 			opacity: 1;
 			width: 42px;
 		}
+		.news-card__content {
+			transform: translateY(4px);
+		}
 	}
 	&__content {
 		position: relative;
+		transition: transform .25s ease;
 		z-index: 2;
 	}
 	&__label {
 		color: var(--color-accent);
-		font-size: 14px;
+		font-size: 12px;
 		font-weight: 300;
 		letter-spacing: 0.02em;
 		line-height: 1.6;
 		margin: 0;
+		@media (min-width: $screen-lg) {
+			font-size: 14px;
+		}
 	}
 	&__heading {
-		font-size: 20px;
+		font-size: 14px;
 		font-weight: 400;
 		letter-spacing: 0.015em;
 		line-height: 1.65;
-		margin: 15px 0 0 0;
+		margin: 5px 0 0 0;
+		@media (min-width: $screen-lg) {
+			font-size: 20px;
+			margin-top: 15px;
+		}
 	}
 	&__img {
 		height: 482px;
@@ -67,14 +87,14 @@
 		border-radius: 50%;
 		bottom: -22px;
 		display: flex;
-		height: 0;
+		height: 111px;
 		justify-content: center;
 		opacity: 0;
 		overflow: hidden;
 		position: absolute;
 		right: -15px;
-		transition: opacity .5s ease, width .25s ease, height .25s ease;
-		width: 0;
+		transition: opacity .75s ease;
+		width: 111px;
 	}
 	&__icon {
 		fill: var(--color-accent);

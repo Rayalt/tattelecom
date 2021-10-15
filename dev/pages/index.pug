@@ -10,14 +10,15 @@ block content
 		.grid
 			.grid__row
 				.grid__col
-					.section__inner
-						.hero__content
-							p.hero__label Тариф «Летай.Оранжевый»
-							h1.hero__heading ВЫЖМИ СКОРОСТЬ
-							p.hero__descr Мощный интернет + ТВ 160 каналов
-							a.hero__button.button.button_primary(href='#') Подробнее
-		img.hero__img(src='img/img__hero_bg_@1.jpg' srcset='img/img__hero_bg_@2.jpg 2x' alt='Hero bg')
-		
+					.hero__inner
+						p.hero__label Тариф «Летай.Оранжевый»
+						h1.hero__heading ВЫЖМИ СКОРОСТЬ
+						p.hero__descr Мощный интернет + ТВ 160 каналов
+						a.hero__button.button.button_primary(href='#') Подробнее
+		picture
+			source(media='(max-width: 755px)' srcset='img/img__hero_bg_@1.jpg 600w')
+			source(media='(min-width: 768px)' srcset='img/img__hero_bg_@2.jpg 1920w')
+			img.hero__img(src='img/img__hero_bg_@1.jpg' srcset='img/img__hero_bg_@1.jpg, img/img__hero_bg_@2.jpg' alt='Hero bg')
 	section.section.tariff
 		.grid
 			.grid__row
@@ -28,8 +29,8 @@ block content
 							a.section__button(href='#')
 								span Все тарифы
 								svg.section__button-icon
-									use(xlink:href='img/svgSprite.svg#icon__shewron_small')
-						.tariff__slider
+									use(xlink:href='img/svgSprite.svg#icon__shewron_large')
+						.tariff__slider.tariff__slider_desk
 							+slider-card([
 								{
 									accent: true,
@@ -184,40 +185,43 @@ block content
 										.action-card__tab-content(data-content='1')
 											form.form.action-card__form
 												.form__grid
-													.form__feild.field
-														label.field__inner
-															.field__label Введите номер
-															input.field__input.input(required='required' type='tel' placeholder='+7 (      )         -     -  ' data-mask-tel)
-													.form__feild.field.field_sm
-														label.field__inner
-															.field__label От 10 до 30 000 ₽
-															input.field__input.input(required='required' type='text' placeholder='Сумма' data-mask-number)
+													.form__field-item
+														.form__feild.field
+															label.field__inner
+																.field__label Введите номер
+																input.field__input.input(required='required' type='tel' placeholder='+7 (___) ___-__-__' data-mask-tel)
+														.form__feild.field.field_sm
+															label.field__inner
+																.field__label(data-sum='30000') От 10 до 30 000 ₽
+																input.field__input.input(required='required' type='text' placeholder='Сумма' data-mask-number)
 													button.form__button.button.button_primary Продолжить
 											p.action-card__info Нажимая кнопку «Продолжить», вы принимаете условия #[a(href='#') пользовательского соглашения].
 										.action-card__tab-content.action-card__tab-content_hidden(data-content='2')
 											form.form.action-card__form
 												.form__grid
-													.form__feild.field
-														label.field__inner
-															.field__label Введите номер2
-															input.field__input.input(required='required' type='tel' placeholder='+7 (      )         -     -  ' data-mask-tel)
-													.form__feild.field.field_sm
-														label.field__inner
-															.field__label От 10 до 40 000 ₽
-															input.field__input.input(required='required' type='text' placeholder='Сумма' data-mask-number)
+													.form__field-item
+														.form__feild.field
+															label.field__inner
+																.field__label Введите номер2
+																input.field__input.input(required='required' type='tel' placeholder='+7 (___) ___-__-__' data-mask-tel)
+														.form__feild.field.field_sm
+															label.field__inner
+																.field__label(data-sum='40000') От 10 до 40 000 ₽
+																input.field__input.input(required='required' type='text' placeholder='Сумма' data-mask-number)
 													button.form__button.button.button_primary Продолжить
 											p.action-card__info Нажимая кнопку «Продолжить», вы принимаете условия #[a(href='#') пользовательского соглашения].
 										.action-card__tab-content.action-card__tab-content_hidden(data-content='3')
 											form.form.action-card__form
 												.form__grid
-													.form__feild.field
-														label.field__inner
-															.field__label Введите номер3
-															input.field__input.input(required='required' type='tel' placeholder='+7 (      )         -     -  ' data-mask-tel)
-													.form__feild.field.field_sm
-														label.field__inner
-															.field__label От 10 до 50 000 ₽
-															input.field__input.input(required='required' type='text' placeholder='Сумма' data-mask-number)
+													.form__field-item
+														.form__feild.field
+															label.field__inner
+																.field__label Введите номер3
+																input.field__input.input(required='required' type='tel' placeholder='+7 (___) ___-__-__' data-mask-tel)
+														.form__feild.field.field_sm
+															label.field__inner
+																.field__label(data-sum='50000') От 10 до 50 000 ₽
+																input.field__input.input(required='required' type='text' placeholder='Сумма' data-mask-number)
 													button.form__button.button.button_primary Продолжить
 											p.action-card__info Нажимая кнопку «Продолжить», вы принимаете условия #[a(href='#') пользовательского соглашения].
 							.action-card.action-card_img
@@ -243,7 +247,7 @@ block content
 											.form__feild.field
 												label.field__inner
 													.field__label.field__label_invert Введите номер переноса
-													input.field__input.input(required='required' type='tel' placeholder='+7 (      )         -     -  ' data-mask-tel)
+													input.field__input.input(required='required' type='tel' placeholder='+7 (___) ___-__-__' data-mask-tel)
 											.form__feild.field.field_md
 												label.field__inner
 													.field__label.field__label_invert Укажите город проживания
@@ -278,8 +282,8 @@ block content
 								a.section__button(href='#')
 									span Все новости
 									svg.section__button-icon
-										use(xlink:href='img/svgSprite.svg#icon__shewron_small')
-							.news__slider
+										use(xlink:href='img/svgSprite.svg#icon__shewron_large')
+							.news__slider-news
 								+slider-news([
 									{
 										label: '22 май',
@@ -302,11 +306,16 @@ block content
 										title: 'Мы благодарим всех участников Летай Бонус и сообщаем о закрытии программы'
 									}
 								])
+						
+							a.section__button(href='#')
+								span Все новости
+								svg.section__button-icon
+									use(xlink:href='img/svgSprite.svg#icon__shewron_large')
 						.news__row
 							.section__header
 								h2.section__heading Полезная информация
-							.news__info
-								+info-card([
+							.news__slider-info
+								+slider-info([
 									{
 										img: 'intercom',
 										title: 'Домофония'
@@ -335,5 +344,6 @@ block content
 										input.field__input.input(required='required' type='text' placeholder='Ваше имя')
 								.form__feild.field.action__field
 									label.field__inner
-										input.field__input.input(required='required' type='tel' placeholder='+7 (      )         -     -  ' data-mask-tel)
+										input.field__input.input(required='required' type='tel' placeholder='+7 (___) ___-__-__' data-mask-tel)
 								button.form__button.action__button.button.button_primary Жду звонка
+		img.action__img(src='img/bg__lines_page_@1.png' srcset='img/bg__lines_page_@2.png 2x' alt='bg')

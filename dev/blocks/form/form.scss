@@ -7,23 +7,92 @@
 	flex-direction: column;
 	width: 100%;
 	&__grid {
-		align-items: flex-end;
-		display: flex;
+		display: grid;
+		grid-gap: 22px;
 		width: 100%;
+		@media (min-width: 600px) {
+			align-items: flex-end;
+			grid-auto-flow: column;
+			grid-gap: 14px;
+		}
+		@media (min-width: $screen-md) {
+			grid-auto-flow: row;
+		}
+		@media (min-width: $screen-lg) {
+			grid-auto-flow: column;
+		}
+		.action-card_accent & {
+			grid-gap: 10px;
+			@media (min-width: $screen-lg) {
+				display: flex;
+				grid-gap: 0;
+			}
+		}
+		.action & {
+			grid-gap: 20px;
+			@media (min-width: 600px) {
+				grid-gap: 10px;
+			}
+			@media (min-width: $screen-md) {
+				grid-auto-flow: column;
+				justify-content: center;
+			}
+		}
+	}
+	&__field-item {
+		display: grid;
+		grid-gap: 10px;
+		grid-template-columns: 7fr 3fr;
+		@media (min-width: $screen-md) {
+			grid-gap: 14px;
+		}
+		@media (min-width: $screen-lg) {
+			grid-template-columns: 8fr 2fr;
+			width: 451px;
+		}
 	}
 	&__feild + &__feild {
-		margin-left: 14px;
+		.action-card_accent & {
+			@media (min-width: $screen-lg) {
+				margin-left: 14px;
+			}
+		}
 	}
 	&__feild + &__button {
-		margin-left: 14px;
+		.action-card_accent & {
+			@media (min-width: $screen-lg) {
+				margin-left: 14px;
+			}
+		}
 	}
 	&__checkbox {
 		align-items: center;
 		display: flex;
-		margin-top: 45px;
+		margin-top: 20px;
+		@media (min-width: $screen-lg) {
+			margin-top: 45px;
+		}
 	}
 	&__button {
-		height: 54px;
-		width: 189px;
+		height: 44px;
+		.action-card_accent & {
+			margin-top: 10px;
+			@media (min-width: $screen-lg) {
+				margin-top: 0;
+			}
+		}
+		@media (min-width: 600px) {
+			height: 54px;
+			width: 189px;
+		}
+		@media (min-width: $screen-md) {
+			width: 100%;
+		}
+		@media (min-width: $screen-lg) {
+			max-width: 189px;
+		}
+		@media (min-width: $screen-xl) {
+			width: 189px;
+		}
 	}
 }
