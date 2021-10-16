@@ -123,6 +123,13 @@ window.onload = function() {
 			e.target.classList.add('menu__link_active');
 		});
 	});
+	//close menu
+	const closeMenuList = document.querySelectorAll('.tertiary-nav__link, .secondary-nav__link, .header__button');
+	closeMenuList.forEach((closeMenu) => {
+		closeMenu.addEventListener('click', () => {
+			page.classList.remove('open-menu');
+		});
+	});
 
 	//menu tabs
 	const menuTabList = document.querySelectorAll('[data-nav-tab]'), 
